@@ -1,0 +1,92 @@
+.form-popup .box {
+  max-width: 600px;
+  height: fit-content;
+  padding: 15px 15px 20px;
+  background: var(--bg-1);
+  border-radius: 16px;
+  margin: 30px;
+}
+.form-popup .box h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+.form-popup .box > .top {
+  display: flex;
+  font-weight: bold;
+  gap: 30px;
+}
+.form-popup .box .step {
+  display: flex;
+  flex-direction: column;
+  padding: 0 50px;
+  /* padding: 0 30px; */
+  margin-top: 20px;
+  /* width: 100%; */
+}
+.form-popup form {
+  width: 100%;
+}
+#join .form-popup button.btn {
+  width: 100%;
+  margin-top: 100px;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 50rem;
+  color: var(--text-3);
+  background: var(--text-2);
+  border: none;
+}
+#join .form-popup button.btn.active {
+  transition: .3s background;
+  background: var(--text-1);
+}
+
+#login .forget-password {
+  font-size: 13px;
+  color: var(--text-2);
+  cursor: pointer;
+}
+#login .forget-password:hover {
+  transition: .3s color;
+  color: var(--primary-color);
+}
+#login .credentials {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  gap: 1px;
+}
+#login .credentials span {
+  margin-bottom: 2px;
+  font-size: 15px;
+}
+
+#sign-up form .birth-description {
+  margin: 20px 0 40px;
+}
+#sign-up form .birth-description span {
+  margin-top: 10px;
+  display: block;
+  color: var(--text-2);
+  font-size: 14px;
+}
+#sign-up .step-two h2 {
+  font-size: 31px;
+  padding: 30px 0;
+  letter-spacing: 1px;
+}
+#sign-up .step-two h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+#sign-up .step-two p {
+  color: var(--text-2);
+  margin-bottom: 40px;
+  font-size: 14px;
+}
+#sign-up .step-three form p {
+  margin-top: 20px;
+  font-size: 12px;
+}

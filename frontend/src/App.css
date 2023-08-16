@@ -1,0 +1,285 @@
+.App {
+  height: 100%;
+  background: var(--bg-1);
+}
+/* Navbar */
+div.nav.full {
+  margin-bottom: 100px;
+}
+div.nav {
+  width: inherit;
+}
+.nav.full nav {
+  height: 100px;
+}
+.nav nav {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: inherit;
+  background: var(--transparent-bg);
+  backdrop-filter: blur(12px);
+  z-index: 99;
+}
+.nav:not(.full) nav {
+  border-bottom: var(--global-border);
+}
+.nav nav .page-name {
+  flex-basis: 50%;
+  padding: 12px 16px;
+  font-size: 14px;
+}
+.nav nav .page-name h2 {
+  padding-top: 3px;
+}
+.nav nav .page-name span {
+  padding: 0;
+  font-size: 13px;
+}
+.tabs {
+  height: 50px;
+  display: flex;
+}
+.tabs ul {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  border-bottom: var(--global-border);
+}
+.tabs ul a {
+  cursor: pointer;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tabs ul a:hover {
+  transition: .3s background;
+  background: rgb(15, 20, 25, 0.1);
+}
+.tabs ul a span {
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--text-2);
+  height: 100%;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.tabs ul a.active span {
+  color: var(--text-1);
+}
+.tabs ul a.active span::after {
+  content: '';
+  position: absolute;
+  height: 4px;
+  width: 60px;
+  bottom: 1px;
+  left: 50%;
+  background: var(--primary-color);
+  border-radius: 2px;
+  transform: translateX(-50%);
+}
+
+.context-menu {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-1);
+  box-shadow: var(--box-shadow);
+  border-radius: 16px;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  z-index: 9999;
+  width: max-content;
+  overflow: hidden;
+  display: none;
+}
+.tweet .context-menu {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.context-menu.active {
+  display: flex;
+}
+.context-menu > div {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  font-size: 15px;
+  gap: 6px;
+  font-weight: bold;
+  color: var(--text-1);
+}
+.context-menu > div:hover {
+  transition: .3s background;
+  background-color: var(--gray-2);
+}
+.context-menu > div > span svg {
+  fill: var(--text-1) !important;
+  background-color: transparent !important;
+  width: 1.75rem;
+}
+.tweet .context-menu > div > span svg {
+  width: 1.2rem !important;
+}
+
+.overlay-bg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: var(--overlay-bg);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.include-scroll-in-radius {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* form-popup */
+.form-popup form .input-holder {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 10px 0;
+}
+.form-popup form .input-holder label {
+  width: 100%;
+  border: var(--global-border);
+  border-radius: 4px;
+}
+.form-popup form .input-holder label .top {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 5px 7px;
+}
+.form-popup form .input-holder label span {
+  color: var(--text-2);
+  font-size: 13px;
+}
+
+.form-popup form .input-holder label:focus-within,
+.form-popup form .input-holder label:focus-within span {
+  transition: .3s border, .3s color;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+.form-popup form .input-holder label input,
+.form-popup form .input-holder label textarea {
+  width: 100%;
+  border: none;
+  padding: 2px 7px 10px;
+  outline: none;
+  font-size: 16px;
+  font-family: 'Libre Franklin', sans-serif;
+}
+.form-popup form .input-holder > span {
+  margin: 3px 0;
+  font-size: 12px;
+}
+.form-popup form .input-holder label span.input-length {
+  color: var(--text-2);
+}
+
+.user-name {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  gap: 4px;
+}
+.user-name span:first-of-type {
+  padding-bottom: 5px;
+}
+
+.tweets {
+  padding-bottom: 400px;
+}
+
+.empty-page {
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 110%;
+  margin: 0 auto;
+  background-color: var(--bg-1);
+}
+
+svg {
+  fill: var(--bg-2);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+div {
+  color: var(--text-1);
+}
+input,
+select,
+textarea {
+  background: var(--bg-1);
+  color: var(--text-1);
+}
+button.follow-btn {
+  transition: .3s;
+  background: var(--bg-2) !important;
+  color: var(--text-3) !important;
+}
+button.following-btn {
+  transition: .3s;
+  background: transparent !important;
+  color: var(--text-1) !important;
+  border: 1px solid var(--text-2) !important;
+}
+button.unfollow-btn {
+  transition: .3s;
+  background: transparent !important;
+  color: red !important;
+  border-color: red !important;
+}
+button.follow-btn:hover,
+button.following-btn:hover,
+button.unfollow-btn:hover {
+  transition: .3s box-shadow, .3s color, .3s width;
+}
+button.follow-btn:hover {
+  box-shadow: inset 0px 0px 60px -10px var(--overlay-bg);
+}
+button.following-btn:hover {
+  box-shadow: inset 0px 0px 60px -10px var(--overlay-bg);
+}
+button.unfollow-btn:hover {
+  box-shadow: inset 0px 0px 60px -10px #f133333d;
+}
+
+.big-btn {
+  display: flex;
+  justify-content: end;
+}
+.big-btn button {
+  padding: 9px 20px;
+  font-weight: 600;
+  font-size: 15px;
+  border: var(--global-border);
+  border-radius: 50rem;
+  background: transparent;
+  color: var(--text-1);
+  border: 1px solid var(--text-2);
+}
+
+.expand-media {
+}

@@ -1,0 +1,76 @@
+.profile-images.is-edit {
+  margin-bottom: 100px;
+}
+.profile-images {
+  position: relative;
+}
+.profile-images img {
+  cursor: pointer;
+}
+.profile-picture {
+  width: 133px;
+  height: 133px;
+  position: absolute;
+  bottom: 5px;
+  left: 20px;
+  transform: translateY(50%);
+  border: 4px solid var(--bg-1);
+  border-radius: 50rem;
+  background: var(--bg-cover-color);
+  overflow: hidden;
+}
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cover {
+  height: 250px;
+  overflow: hidden;
+  background-color: var(--bg-cover-color);
+  width: 100%;
+}
+.cover img {
+  width: 100%;
+  object-fit: cover;
+}
+.profile-images.is-edit .file-holder {
+  position: absolute;
+  z-index: 1000000000;
+  background-color: var(--overlay-bg);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile-images.is-edit .file-holder::after,
+.profile-images.is-edit .file-holder::before {
+  content: '';
+  position: absolute;
+  background: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  cursor: pointer;
+  user-select: none;
+}
+.profile-images.is-edit .file-holder::before {
+  width: 2px;
+  height: 60%;
+}
+.profile-images.is-edit .file-holder::after {
+  width: 60%;
+  height: 2px;
+}
+.profile-images.is-edit .file-holder input {
+  width: 1px;
+  height: 1px;
+  padding: 25px;
+  opacity: 0;
+  cursor: pointer;
+}

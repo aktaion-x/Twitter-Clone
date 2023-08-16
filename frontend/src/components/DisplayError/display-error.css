@@ -1,0 +1,27 @@
+#display-error {
+  position: fixed;
+  z-index: 9999999999999;
+  width: 300px;
+  background-color: var(--bg-1);
+  top: 40%;
+  box-shadow: var(--box-shadow);
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 22px;
+  text-align: center;
+  border-radius: 16px;
+}
+#display-error h2 {
+  margin-bottom: 20px;
+  color: #f00;
+}
+#display-error p {
+  margin-bottom: 30px;
+}
+#display-error button {
+  border: none;
+  background: var(--bg-3);
+  padding: 14px;
+  width: 100%;
+  color: var(--text-3);
+}

@@ -1,0 +1,195 @@
+#join {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+#join .landing {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex: 1;
+}
+#join .landing > div {
+  width: 100%;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  /* text-align: center; */
+}
+#join .landing > div:first-child {
+  justify-content: center;
+}
+#join .landing > div .logo {
+  width: 450px;
+  /* min-width: 50%; */
+}
+#join .btn-icon svg:hover {
+  transition: .3s background;
+  background: var(--gray-2);
+}
+#join .welcome-panel {
+  padding: 15px 20px;
+  text-align: left;
+}
+#join .welcome-panel h1 {
+  font-size: 70px;
+  font-weight: 900;
+  margin-bottom: 70px;
+  letter-spacing: 2px;
+}
+#join .welcome-panel h2 {
+  margin-bottom: 40px;
+  font-size: 28px;
+  font-weight: 800;
+}
+#join .welcome-panel ul {
+  list-style: none;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#join .welcome-panel ul li.btn button {
+  padding: 5px 10px;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  border-radius: 50rem;
+  cursor: pointer;
+}
+#join .welcome-panel ul li.btn button:hover {
+  transition: .3s opacity;
+  opacity: 90%;
+}
+#join .welcome-panel ul li.btn.signin button:hover {
+  transition: .3s background;
+  background: #00b7ff0c;
+}
+#join .welcome-panel ul li.btn button img {
+  width: 20px;
+}
+#join .welcome-panel ul li.btn button span {
+  font-size: 15px;
+}
+#join .welcome-panel ul li.btn:not(.google) button span {
+  font-weight: bold;
+}
+#join .welcome-panel ul li.btn.signup button {
+  background: var(--primary-color);
+  color: #fff;
+}
+#join .welcome-panel ul li.btn.signin > span {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+#join .welcome-panel ul li.btn.signin button {
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  background: transparent;
+}
+#join .welcome-panel ul li.text,
+#join .welcome-panel ul li.text a {
+  font-size: 12px;
+  margin-bottom: 50px;
+  text-decoration: none;
+}
+#join .welcome-panel ul li.text a {
+  color: var(--primary-color);
+}
+#join .welcome-panel ul li.or {
+  position: relative;
+}
+#join .welcome-panel ul li.or::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1%;
+  background: #ccc;
+  border-radius: 50rem;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+#join .welcome-panel ul li.or span {
+  text-align: center;
+  display: block;
+  width: 30px;
+  margin: 0 auto;
+  position: relative;
+  background: var(--bg-1);
+}
+#join .footer {
+  padding: 15px 25px;
+}
+#join .footer ul {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#join .footer ul li a {
+  color: var(--text-2);
+  font-size: 13px;
+  text-decoration: none;
+}
+.toggle-theme-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.toggle-theme-container > span {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.toggle-theme {
+  display: flex;
+  justify-content: flex-start;
+  padding: 3px 4px;
+  background: var(--bg-3);
+  width: 50px;
+  border-radius: 50rem;
+  cursor: pointer;
+}
+.toggle-theme:hover {
+  transition: .3s box-shadow;
+  box-shadow: inset 0px 0px 60px -10px var(--bg-2);
+}
+.toggle-theme span:hover {
+  transition: .3s;
+  box-shadow: inset 0px 0px 20px -10px var(--bg-3);
+}
+.toggle-theme span {
+  width: 15px;
+  height: 15px;
+  background-color: var(--bg-1);
+  border-radius: 50rem;
+}
+.toggle-theme.dark span {
+  display: block;
+  transition: .3s;
+  transform: translateX(calc(43px - 100%));
+}
+.toggle-theme.light span {
+  display: block;
+  transition: .3s;
+  transform: translateX(0);
+}
+/*
+ #join .toggle-theme {
+  position: absolute;
+  right: 50px;
+  top: 30px;
+  cursor: pointer;
+}
+#join .toggle-theme svg {
+  width: 3rem;
+} */

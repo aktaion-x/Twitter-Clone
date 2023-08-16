@@ -1,0 +1,11 @@
+#view-quotes div.nav {
+  padding-bottom: 50px;
+  /* border-bottom: 1px solid var(--less-gray-color); */
+}
+#view-quotes .nav nav {
+  max-height: 50px;
+}
+#view-quotes .nav nav .page-name {
+  display: flex;
+  gap: 10px;
+}

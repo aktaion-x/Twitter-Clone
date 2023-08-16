@@ -1,0 +1,35 @@
+.introduction-popup {
+  display: flex;
+  flex-direction: column;
+  width: 650px;
+  padding: 30px 50px;
+  background-color: var(--bg-1);
+  border-radius: 16px;
+}
+.introduction-popup h2 {
+  text-align: center;
+  font-size: 40px;
+  margin: 30px 0 15px;
+  font-weight: 900;
+  transform: scaleY(1.1);
+  letter-spacing: .1rem;
+}
+.introduction-popup.popup-one > span {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.introduction-popup.popup-one p code {
+  color: var(--primary-color);
+  font-size: 15px;
+}
+.introduction-popup.popup-one p {
+  margin-bottom: 20px;
+  line-height: 1.5rem;
+}
+.introduction-popup.popup-one button.btn {
+  margin-top: 100px;
+  cursor: pointer;
+  padding: 16px;
+  background: var(--bg-3);
+  color: var(--text-3);
+}

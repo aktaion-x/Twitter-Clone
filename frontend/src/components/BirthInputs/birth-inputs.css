@@ -1,0 +1,12 @@
+#birth-inputs {
+  display: flex;
+  gap: 10px;
+}
+#birth-inputs select {
+  border: none;
+  width: 100%;
+  padding: 3px 5px 8px;
+  display: block;
+  font-size: 16px;
+  outline: none;
+}

@@ -1,0 +1,39 @@
+#logout {
+  position: absolute;
+  top: -80px;
+  z-index: 99;
+  background-color: var(--bg-1);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+}
+#logout ul {
+  position: relative;
+  padding: 12px 0;
+  border-radius: 16px;
+  box-shadow: var(--box-shadow);
+}
+#logout ul::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -16px;
+  transform: translateX(-50%);
+  border: 8px solid;
+  border-color: var(--bg-1) transparent transparent transparent;
+}
+#logout ul li {
+  padding: 12px 20px;
+  font-weight: 700;
+}
+#logout ul li:hover {
+  transition: .3s background;
+  background: var(--gray-2);
+}
+@media (max-width: 1200px) {
+  #logout {
+    left: 0;
+    transform: translate(0, -50%);
+    width: 300px;
+  }
+}

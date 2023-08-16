@@ -1,0 +1,69 @@
+.tweet .content .media-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2px;
+  max-height: 600px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.tweet .content .media-container.count-1 .media-element {
+  margin: 0 auto;
+  max-width: calc(100% - 2px);
+  max-height: calc(600px - 2px);
+}
+.tweet .content .media-container.count-2 .media-element {
+  width: calc(50% - 2px);
+  height: calc(300px - 2px);
+}
+.tweet .content .media-container.count-3 .media-element {
+  width: calc(50% - 2px);
+  height: calc(300px - 2px);
+}
+.tweet .content .media-container.count-3 .media-element:last-child {
+  width: calc(100% - 2px);
+  height: calc(300px - 2px);
+}
+.tweet .content .media-container.count-4 .media-element {
+  width: calc(50% - 2px);
+  height: calc(300px - 2px);
+}
+
+.tweet .content .media-container .media-element img,
+.tweet .content .media-container .media-element video {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+  cursor: pointer;
+}
+
+.tweet .quote-content .media-container {
+  gap: 1px;
+  max-height: 300px;
+  border-radius: 0 0 16px 16px;
+  overflow: hidden;
+}
+
+/* .tweet .content .media-container.count-1 .media-element {
+  margin: 0 auto;
+  max-width: calc(100% - 2px);
+  max-height: calc(300px - 2px);
+}
+.tweet .content .media-container.count-2 .media-element {
+  width: calc(50% - 2px);
+  height: calc(300px - 2px);
+}
+.tweet .content .media-container.count-3 .media-element {
+  width: calc(50% - 2px);
+  height: calc(150px - 2px);
+}
+.tweet .content .media-container.count-3 .media-element:last-child {
+  width: calc(100% - 2px);
+  height: calc(150px - 2px);
+}
+.tweet .content .media-container.count-4 .media-element {
+  width: calc(50% - 2px);
+  height: calc(150px - 2px);
+} */

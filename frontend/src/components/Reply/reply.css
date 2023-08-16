@@ -1,0 +1,77 @@
+#reply {
+  background-color: var(--bg-1);
+  z-index: 99999;
+  position: absolute;
+  padding: 12px 16px;
+  border-radius: 16px;
+  width: 470px;
+}
+#reply .tweet:not(.expand) {
+  padding: 0;
+  overflow: initial;
+  border-bottom: none;
+}
+#reply .tweet .quote {
+  margin: 0px 30px 10px;
+}
+#reply .create-reply form textarea {
+  margin-bottom: 30px;
+}
+#reply .create-reply form:focus-within textarea {
+  border-bottom: none;
+}
+#reply .create-reply {
+  display: flex;
+  padding: 20px 20px 12px 10px;
+}
+
+#reply .create-reply .img {
+  max-width: 40px;
+}
+#reply .create-reply .img img {
+  width: 100%;
+}
+#reply .create-reply form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+#reply .create-reply form textarea {
+  border: none;
+  padding: 10px 20px 0 16px;
+  resize: none;
+  font-size: 16px;
+  height: 32px;
+}
+#reply .create-reply.reply form textarea,
+#reply .create-reply.quote form textarea {
+  height: 80px;
+}
+#reply .create-reply form .bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-top: 12px;
+}
+#reply .create-reply form .bottom svg {
+  width: 20px;
+  fill: var(--primary-color);
+}
+#reply .create-reply form .bottom button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50rem;
+  background: var(--primary-color);
+  font-weight: bold;
+  color: #fff;
+  opacity: .7;
+}
+#reply .create-reply form .bottom input[type="file"] {
+  /* display: none; */
+}
+#reply .create-reply form:focus-within textarea {
+  height: 80px;
+
+  transition: .5s height;
+  /* border-bottom: 1px solid var(--less-gray-color); */
+}

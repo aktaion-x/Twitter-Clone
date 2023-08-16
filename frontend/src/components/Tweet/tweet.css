@@ -1,0 +1,337 @@
+.tweet {
+  padding: 12px 16px 0;
+  /* overflow: hidden; */
+}
+.tweet .pinned {
+  color: var(--text-2);
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: start;
+  gap: 2px;
+  padding-left: 50px;
+}
+.tweet.expand .pinned {
+  padding-left: 0;
+  margin-bottom: 5px;
+}
+.tweet .pinned svg {
+  fill: var(--text-2);
+  width: .9rem;
+}
+
+.tweet.expand {
+  cursor: default;
+}
+.tweet:not(.expand) {
+  border-bottom: var(--global-border);
+  cursor: pointer;
+}
+.tweet:not(.expand):hover {
+  transition: .3s ease-in-out background;
+  background-color: var(--tweet-hover);
+}
+.tweet .tweet-head {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.tweet .tweet-head .user a {
+  display: flex;
+  gap: 10px;
+}
+.tweet .tweet-head .user .img,
+.tweet .tweet-head .user .info {
+  cursor: pointer;
+}
+
+.tweet:first-of-type .tweet-head .user .img::after {
+  content: '';
+  position: absolute;
+  width: 1px;
+  /* height: 10000px; */
+  top: 50px;
+  background: var(--gray-2);
+  left: 19px;
+}
+.tweet img {
+  width: 100%;
+}
+.tweet .tweet-head .user .info {
+  margin-top: 5px;
+  display: flex;
+  gap: 5px;
+  height: fit-content;
+}
+.tweet .tweet-head .user .info .name {
+  font-weight: bold;
+}
+.tweet .tweet-head .user .info .icon svg {
+  width: 17px;
+}
+.tweet .info .username,
+.tweet .info .time {
+}
+.tweet .info .username:hover {
+  text-decoration: underline;
+}
+.tweet .info .time::before {
+  content: '. ';
+}
+.tweet .tweet-head .more {
+  position: relative;
+}
+.tweet .tweet-head .more svg {
+  width: 1.5rem;
+  fill: var(--text-2);
+}
+.tweet .tweet-head .more svg:hover {
+  transition: .3s background, .3s color;
+  background: rgba(29, 155, 240, 0.1);
+  fill: var(--primary-color);
+}
+.tweet .content {
+  padding-left: 50px;
+}
+.tweet.expand .content {
+  padding-left: 0;
+}
+.tweet .content .text {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.tweet.expand .content .text {
+  font-size: 17px;
+  margin: 15px 0;
+}
+.tweet:not(.expand) .quote:hover {
+  transition: .3s ease-in-out background;
+  background-color: var(--tweet-hover);
+}
+/* .tweet.expand .quote-content .text {
+  font-size: 15px;
+} */
+.tweet .content .media {
+  display: inline-grid;
+}
+.tweet .content .media :nth-child(2) {
+  grid-column-start: 2;
+}
+.tweet .content .media :nth-child(3):last-child {
+  grid-column-start: span 2;
+}
+
+/**/
+/* .tweet .content .media {
+  height: 500px;
+  width: 100%;
+  aspect-ratio: 1;
+  grid-gap: 1px;
+  vertical-align: top;
+  counter-reset: num;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.tweet .content .media * {
+  font-size: 30px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  display: grid;
+  background: var(--bg-2);
+}
+
+.tweet .content .media li {
+  max-width: 100%;
+}
+.tweet .content .media li img {
+  height: 100%;
+  object-fit: cover;
+} */
+
+.tweet .quote {
+  border-radius: 16px;
+  border: var(--global-border);
+  margin-top: 15px;
+}
+.tweet .quote-content .text {
+  padding: 0 8px 8px;
+}
+
+/* .tweet .quote-content .media {
+  border-radius: 0 0 16px 16px;
+}
+.tweet .quote-content .media {
+  max-height: 250px;
+} */
+
+.tweet .quote-head {
+  padding: 8px;
+  display: flex;
+  gap: 5px;
+}
+.tweet .quote-head .img {
+  max-width: 20px;
+  max-height: 20px;
+}
+.tweet .quote-head .info {
+  display: flex;
+  gap: 5px;
+}
+.tweet .quote-head .name {
+  font-weight: bold;
+}
+.tweet .quote-head .info .icon svg {
+  width: 18px;
+}
+.tweet .quote-head {
+  display: flex;
+}
+.tweet .content .date {
+  margin-top: 10px;
+  color: var(--text-2);
+  font-size: 15px;
+  padding-bottom: 10px;
+  border-bottom: var(--global-border);
+  display: none;
+}
+.tweet.expand .content .date {
+  display: block;
+}
+.tweet .content .date :not(:last-child)::after {
+  content: ' . ';
+}
+.tweet .tweet-bottom {
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
+}
+.tweet.expand .tweet-bottom {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+}
+.tweet .tweet-bottom .statistics {
+  padding: 15px 0;
+  display: flex;
+  gap: 20px;
+  display: none;
+}
+.tweet.expand .tweet-bottom .statistics {
+  display: flex;
+}
+.tweet .tweet-bottom .statistics li:not(:last-of-type) {
+  cursor: pointer;
+}
+.tweet .tweet-bottom .statistics li,
+.tweet .tweet-bottom .statistics a {
+  display: flex;
+  gap: 3px;
+  font-size: 14px;
+}
+.tweet .tweet-bottom .statistics .number {
+  font-weight: 500;
+}
+.tweet .tweet-bottom .statistics .name {
+  color: var(--text-2);
+}
+.tweet .tweet-bottom .visual-statistics {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 30px;
+}
+.tweet.expand .tweet-bottom .visual-statistics {
+  border-top: var(--global-border);
+  border-bottom: var(--global-border);
+  padding: 10px 50px;
+}
+.tweet .tweet-bottom .visual-statistics li {
+  fill: var(--text-2);
+  color: var(--text-2);
+}
+.tweet .tweet-bottom .visual-statistics li {
+  display: flex;
+  gap: 2px;
+  font-size: 12px;
+  cursor: pointer;
+  position: relative;
+}
+.tweet .tweet-bottom .visual-statistics li .number {
+  padding-top: 4px;
+}
+.tweet.expand .tweet-bottom .visual-statistics li .number {
+  display: none;
+}
+.tweet .tweet-bottom .visual-statistics li svg {
+  width: 1.5rem;
+  fill: var(--text-2);
+}
+.tweet.expand .tweet-bottom .visual-statistics li svg {
+  width: 2rem;
+}
+
+.tweet .visual-statistics li.like-btn:hover span.number {
+  color: var(--like-color);
+}
+.tweet .visual-statistics li.like-btn:hover svg {
+  background: rgba(249, 24, 128, 0.1);
+  fill: var(--like-color);
+  color: var(--like-color);
+}
+.tweet .visual-statistics li.like-btn.active svg,
+.tweet .visual-statistics li.like-btn.active span.number {
+  color: var(--like-color);
+  fill: var(--like-color);
+}
+
+.tweet .visual-statistics li.retweet-btn:hover span.number {
+  transition: .3s color;
+  color: var(--retweet-color);
+}
+.tweet .visual-statistics li.retweet-btn:hover svg {
+  transition: .3s background, .3s fill;
+  background: rgba(0, 186, 124, 0.1);
+  fill: var(--retweet-color);
+}
+.tweet .visual-statistics li.retweet-btn.active svg,
+.tweet .visual-statistics li.retweet-btn.active span.number {
+  fill: var(--retweet-color);
+  color: var(--retweet-color);
+}
+
+.tweet .visual-statistics li:not(.retweet-btn):not(.like-btn):hover svg,
+.tweet .visual-statistics li:not(.retweet-btn):not(.like-btn):hover span.number,
+.tweet .visual-statistics li:not(.retweet-btn):not(.like-btn).active span.number,
+.tweet .visual-statistics li:not(.retweet-btn):not(.like-btn).active svg {
+  fill: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.reply-to {
+  margin-top: -15px;
+  margin-left: 50px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  /* cursor: pointer; */
+  position: relative;
+}
+.expand .reply-to {
+  margin-top: 0;
+}
+.reply-to a {
+  color: var(--primary-color);
+}
+.reply-to a:hover {
+  text-decoration: underline;
+}
+/* .tweet .visual-statistics li .like-btn.active svg
+.tweet .visual-statistics li svg[data-name="LIKE_FILL"] {
+  fill: var(--like-color);
+}
+
+.tweet .visual-statistics li svg[data-name="LIKE"]:hover {
+  background: rgba(249, 24, 128, 0.1);
+  fill: rgba(249, 24, 128, 1);
+}
+.tweet .visual-statistics li svg[data-name="LIKE_FILL"] {
+  fill: rgba(249, 24, 128, 1);
+} */

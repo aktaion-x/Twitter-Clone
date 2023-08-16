@@ -1,0 +1,35 @@
+/*======================
+    404 page
+=======================*/
+#page-404 {
+  padding: 40px 0;
+  background: var(--bg-1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+#page-404 .container-404 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#page-404 .container-404 .logo {
+  width: 600px;
+}
+#page-404 .container-404 p {
+  color: var(--text-1);
+  margin-bottom: 20px;
+}
+#page-404 .container-404 a {
+  display: block;
+  background: var(--bg-3);
+  color: var(--text-3);
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 50rem;
+}
+#page-404 .container-404 a:hover {
+  transition: .3s box-shadow;
+  box-shadow: inset 0px 0px 60px -10px var(--primary-color);
+}

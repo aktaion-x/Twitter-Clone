@@ -1,0 +1,55 @@
+.create-post {
+  display: flex;
+  padding: 20px 20px 12px 16px;
+}
+.create-post:not(.reply):not(.quote) {
+  border-bottom: var(--global-border);
+}
+.create-post .img {
+  width: 40px;
+  height: 40px;
+  flex: none;
+}
+.create-post .img img {
+  width: 100%;
+  height: 100%;
+}
+.create-post form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.create-post form textarea {
+  border: none;
+  padding: 10px 20px 0 16px;
+  resize: none;
+  font-size: 16px;
+  min-height: 50px !important;
+  overflow: hidden;
+}
+.create-post.reply form textarea,
+.create-post.quote form textarea {
+  height: 80px;
+}
+.create-post form .bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-top: 12px;
+}
+.create-post form .bottom svg {
+  width: 20px;
+  fill: var(--primary-color);
+}
+.create-post form .bottom button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50rem;
+  background: var(--primary-color);
+  font-weight: bold;
+  color: #fff;
+  opacity: .7;
+}
+.create-post form:focus-within textarea {
+  border-bottom: var(--global-border);
+}

@@ -1,0 +1,168 @@
+.sidebar {
+  height: 100vh;
+  border-right: var(--global-border);
+  width: 275px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 999;
+}
+@media (max-width: 1200px) {
+  .sidebar {
+    width: 70px;
+    align-items: center;
+    padding: 10px;
+  }
+  .sidebar .top {
+    align-items: center;
+  }
+}
+
+.sidebar .top {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  gap: 10px;
+}
+.sidebar .top .logo {
+  max-width: 60px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50rem;
+}
+.sidebar .top .logo:hover {
+  transition: .3s background;
+  background: var(--gray-2);
+}
+.sidebar .top ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.sidebar .top li .item-holder {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: start;
+  padding: 10px 20px 10px 10px;
+  border-radius: 50rem;
+  width: fit-content;
+  cursor: pointer;
+  position: relative;
+}
+@media (max-width: 1200px) {
+  .sidebar .top li .item-holder {
+    padding: 10px;
+  }
+}
+.sidebar .top li .item-holder:hover {
+  transition: .3s background;
+  background: var(--gray-2);
+}
+.sidebar .top li .item-holder .icon svg {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+.sidebar .top li .item-holder .name {
+  font-size: 19px;
+}
+@media (max-width: 1200px) {
+  .sidebar .top li .item-holder .name {
+    display: none;
+  }
+}
+.sidebar .top li .item-holder.active .name {
+  font-weight: 600;
+}
+.sidebar .top .post {
+  margin: 30px 20px 0 5px;
+}
+@media (max-width: 1200px) {
+  .sidebar .top .post {
+    display: none;
+  }
+}
+.sidebar .top .post button.btn:hover {
+  transition: .3s background, .3s box-shadow;
+  box-shadow: var(--box-shadow);
+  background: #2987d4;
+}
+.sidebar .top .post button.btn {
+  width: 100%;
+  padding: 18px 20px;
+  border: none;
+  border-radius: 50rem;
+  font-size: 16px;
+  font-weight: bold;
+  background: var(--primary-color);
+  color: #fff;
+  box-shadow: var(--box-shadow);
+}
+.sidebar .bottom {
+  margin: 20px 15px 20px 5px;
+  cursor: pointer;
+  position: relative;
+}
+.sidebar .bottom .holder {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-radius: 50rem;
+  align-items: center;
+}
+.sidebar .bottom .holder:hover {
+  transition: .3s background;
+  background: var(--gray-2);
+}
+.sidebar .bottom .holder .user {
+  display: flex;
+  gap: 10px;
+}
+.sidebar .bottom .holder .user .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.sidebar .bottom .holder .user .info .name {
+  display: flex;
+  gap: 8px;
+}
+.sidebar .bottom .holder .user .info .name span:first-child {
+  font-weight: bold;
+}
+.sidebar .bottom .holder .user .info .name .icon svg {
+  width: 18px;
+}
+.sidebar .bottom .holder .user .info .username {
+  font-size: 14px;
+  color: var(--text-2);
+}
+
+.sidebar .bottom .more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+.sidebar .bottom .more svg {
+  width: 20px;
+}
+
+@media (max-width: 1200px) {
+  .sidebar .bottom {
+    margin: 0 0 20px;
+  }
+  .sidebar .bottom #username > a {
+    min-width: initial !important;
+  }
+  .sidebar .bottom .holder {
+    padding: 0;
+  }
+  .sidebar .bottom .holder #username > a .user-info.user-info {
+    display: none;
+  }
+  .sidebar .bottom .more {
+    display: none;
+  }
+}

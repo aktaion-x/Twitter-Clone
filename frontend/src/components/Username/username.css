@@ -1,0 +1,48 @@
+#username > a {
+  display: flex;
+  gap: 10px;
+  min-width: 200px;
+  flex-wrap: wrap;
+}
+#username.profile-hint > a {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 200px;
+}
+#username > a .user-info .name {
+  display: flex;
+  align-items: start;
+  font-weight: 600;
+  gap: 5px;
+  flex-direction: row !important;
+}
+#username > a .user-info .name a:first-of-type:hover {
+  text-decoration: underline;
+}
+#username > a .user-info {
+  display: flex;
+  flex-direction: column;
+}
+#username > a .user-info .username,
+#username > a .user-info .time {
+  color: var(--text-2);
+  font-size: 15px;
+}
+#username > a .bio {
+  font-size: 15px;
+  width: 90%;
+  margin-top: 0;
+  flex-basis: 100%;
+}
+#username.profile-hint > a .bio {
+  margin-top: 10px;
+}
+#username.inline .user-info > div {
+  display: flex;
+  align-items: flex-start;
+  column-gap: 5px;
+}
+#username:not(.inline) .username {
+  margin-top: -5px;
+}

@@ -1,0 +1,43 @@
+#suggest-users {
+  border-radius: 16px;
+  background: var(--gray-1);
+  padding: 20px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* width: max-content; */
+  max-width: max-content;
+  overflow: hidden;
+}
+#suggest-users.full-page {
+  width: 100%;
+  max-width: 100%;
+  background-color: transparent;
+}
+#suggest-users h2 {
+  padding: 0 16px;
+}
+#suggest-users ul {
+  display: flex;
+  flex-direction: column;
+}
+#suggest-users.full-page ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#suggest-users ul li {
+  padding: 15px 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+#suggest-users ul li:hover {
+  transition: .3s background;
+  background: var(--gray-2);
+}
+#suggest-users .show-more {
+  font-size: 15px;
+  color: var(--primary-color);
+}

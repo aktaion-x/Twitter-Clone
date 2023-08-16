@@ -1,0 +1,111 @@
+.tweet .head .user .info {
+  flex-wrap: wrap;
+  row-gap: 2px;
+}
+.tweet .head .user .info .reply-to {
+  font-size: 15px;
+  flex-basis: 100%;
+  display: flex;
+  gap: 5px;
+  margin-bottom: 10px;
+  color: var(--text-2);
+}
+.tweet .head .user .info .reply-to span:last-child {
+  color: var(--primary-color);
+}
+#notify-block {
+  padding: 12px 16px 20px 66px;
+  border-bottom: var(--global-border);
+  position: relative;
+  display: block;
+}
+#notify-block .head {
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  position: initial;
+}
+#notify-block .head {
+  display: flex;
+}
+#notify-block .head .float {
+  position: absolute;
+  left: 22px;
+}
+#notify-block .head > .icon svg {
+  width: 30px;
+  fill: var(--like-color);
+}
+#notify-block .head > .icon svg[data-name="RETWEET"] {
+  fill: var(--retweet-color);
+}
+#notify-block .head > .icon svg[data-name="PERSON"] {
+  fill: var(--primary-color);
+}
+#notify-block .head .img {
+  max-width: 32px;
+  height: 32px;
+  flex-basis: 100%;
+}
+#notify-block img {
+  width: 100%;
+}
+#notify-block .head .user {
+  display: flex;
+  gap: 10px;
+  flex-basis: 100%;
+}
+#notify-block .head .user .info {
+  margin-top: 5px;
+  display: flex;
+  gap: 5px;
+}
+#notify-block .head .user .info .name {
+  font-weight: bold;
+}
+#notify-block .head .user .info .icon svg {
+  width: 17px;
+}
+#notify-block .info .username,
+#notify-block .info .time {
+  font-size: 15px;
+  color: var(--text-2);
+}
+#notify-block .info .time::before {
+  content: '.';
+}
+#notify-block .head .more {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50rem;
+  /* background: #f00; */
+  cursor: pointer;
+}
+#notify-block .head .more svg {
+  width: 20px;
+}
+#notify-block .content {
+  /* padding-left: 50px; */
+  padding-left: 0;
+  margin: 10px 0 0;
+  color: var(--text-2);
+  font-size: 15px;
+}
+#notify-block.expand .content {
+  padding-left: 0;
+}
+#notify-block .content .text {
+  font-size: 15px;
+}
+#notify-block .content .show-more {
+  color: var(--primary-color);
+  opacity: .9;
+}
+.tweet .notification-head {
+  color: var(--text-2);
+  margin: 0 0 10px 0;
+  font-size: 15px;
+}

@@ -1,0 +1,23 @@
+.search {
+}
+.search form {
+}
+.search form label {
+  padding: 10px 15px;
+  background: var(--gray-1);
+  border-radius: 50rem;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+}
+.search form .icon svg {
+  width: 20px;
+  fill: var(--text-2);
+}
+.search form input[type="text"] {
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  box-sizing: border-box;
+}

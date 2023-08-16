@@ -1,0 +1,93 @@
+#profile-hint {
+  position: absolute;
+  background: var(--bg-1);
+  box-shadow: var(--box-shadow);
+  padding: 16px;
+  z-index: 1000;
+  border-radius: 16px;
+  width: 350px;
+  opacity: 0;
+  animation-name: show-hint;
+  animation-duration: 1s;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  top: 10px;
+  left: -5px;
+  margin: 10px;
+}
+#profile-hint.near-bottom {
+  top: initial;
+  bottom: 20px;
+}
+#profile-hint.active {
+  display: block;
+}
+@keyframes show-hint {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#profile-hint header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+#profile-hint header .img {
+  width: 64px;
+  height: 64px;
+  max-width: none;
+  max-height: none;
+}
+#profile-hint section .user .name {
+  display: flex;
+  gap: 5px;
+  font-weight: bold;
+  align-items: flex-start;
+  font-size: 18px;
+}
+#profile-hint section .user svg {
+  width: 18px;
+}
+#profile-hint section .user .username {
+  font-size: 15px;
+  color: var(--text-2);
+}
+#profile-hint .location-join {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 15px;
+  color: var(--text-2);
+}
+#profile-hint .location-join > div {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+#profile-hint .location-join svg {
+  width: 16px;
+  fill: var(--text-2);
+}
+#profile-hint .follow-info {
+  display: flex;
+  gap: 15px;
+  color: var(--text-2);
+  margin: 10px 0 5px;
+}
+#profile-hint .follow-info > div {
+  display: flex;
+  gap: 4px;
+  font-size: 14px;
+}
+#profile-hint .follow-info > div .number {
+  color: var(--text-1);
+  font-weight: 500;
+}

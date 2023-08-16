@@ -1,0 +1,29 @@
+.overlay-bg.show-media {
+  display: block;
+  z-index: 999999;
+}
+.expand-media {
+  max-width: 700px;
+  max-height: 700px;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.expand-media img,
+.expand-media video {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  box-shadow: var(--box-shadow);
+}
+.overlay-bg .expand-icon svg {
+  width: 2rem;
+  background-color: var(--transparent-bg);
+  padding: 4px;
+  border-radius: 50rem;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+}

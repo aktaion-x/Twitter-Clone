@@ -1,0 +1,11 @@
+#expand-tweet div.nav {
+  padding-bottom: 50px;
+  /* border-bottom: 1px solid var(--less-gray-color); */
+}
+#expand-tweet .nav nav {
+  max-height: 50px;
+}
+#expand-tweet .nav nav .page-name {
+  display: flex;
+  gap: 10px;
+}

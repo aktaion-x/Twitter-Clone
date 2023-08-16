@@ -1,0 +1,21 @@
+#users-popup {
+  position: relative;
+}
+#users-popup h2 {
+  padding: 0 16px;
+}
+#users-popup ul {
+  display: flex;
+  flex-direction: column;
+}
+#users-popup ul li {
+  padding: 16px 16px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+#users-popup ul li:hover {
+  transition: .3s background !important;
+  background: var(--gray-2) !important;
+}

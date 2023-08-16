@@ -1,0 +1,33 @@
+.trends {
+  border-radius: 16px;
+  background: var(--gray-1);
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+.trends h2 {
+  padding: 0 20px;
+  margin-right: 70px;
+}
+.trends ul {
+  display: flex;
+  flex-direction: column;
+}
+.trends ul li {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.trends ul li:hover {
+  transition: .3s background;
+  background: var(--gray-2);
+}
+.trends ul li span {
+  font-size: 12px;
+  color: var(--text-2);
+}
+.trends ul li .name {
+  padding: 2px 0 4px;
+  font-weight: bold;
+}

@@ -1,0 +1,15 @@
+#widgets {
+  padding: 5px 0 50px 40px;
+  border-left: var(--global-border);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 400px;
+  min-height: 100vh;
+}
+@media (max-width: 1200px) {
+  #widgets {
+    padding: 5px 0 50px 20px;
+    margin-right: 10px;
+  }
+}
