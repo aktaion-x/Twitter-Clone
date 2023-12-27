@@ -1,7 +1,6 @@
 import "./introduction-popup.css";
 import ProfileImages from "../../pages/Profile/ProfileImages";
 import useAuthContext from "../../hooks/useAuthContext";
-import "../../pages/profile/edit-profile.css";
 import "../../pages/Join/join-popup.css";
 import useUser from "../../hooks/useUser";
 // import Icons from "../../assets/Icons";
