@@ -10,14 +10,12 @@ const useAuthUser = () => {
   const { dispatch: dispatchError } = useErrorContext();
   const api = useContext(ApiContext);
 
-  const createUser = async (email, name, birth) => {
+  const checkEmail = async email => {
     setError(null);
     setIsPending(true);
     try {
-      const res = await api.post("/user/create", {
-        email,
-        name,
-        birth
+      const res = await api.post("/user/check-email", {
+        email
       });
       setIsPending(false);
       return res;
@@ -27,19 +25,23 @@ const useAuthUser = () => {
     }
   };
 
-  const signupUser = async (password, rePassword, token) => {
+  const signupUser = async (password, rePassword, email, name, birth) => {
     setError(null);
     setIsPending(true);
     try {
       const res = await api.post("/user/signup", {
         password,
         rePassword,
-        token
+        email,
+        name,
+        birth
       });
+      console.log({ res });
       dispatch({ type: "LOGIN", payload: res.data.user });
       setIsPending(false);
       return res;
     } catch (error) {
+      console.log({ error });
       dispatchError({ type: "ERROR", payload: error.response.data.message });
       setIsPending(false);
     }
@@ -82,7 +84,7 @@ const useAuthUser = () => {
     }
   };
 
-  return { error, isPending, createUser, signupUser, loginUser, logoutUser, validateToken };
+  return { error, isPending, checkEmail, signupUser, loginUser, logoutUser, validateToken };
 };
 
 export default useAuthUser;

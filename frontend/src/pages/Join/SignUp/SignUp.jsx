@@ -2,12 +2,17 @@ import { useState } from "react";
 import "../join-popup.css";
 import StepOne from "./steps/StepOne";
 import StepTwo from "./steps/StepTwo";
-import StepThree from "./steps/StepThree";
 import Icons from "../../../assets/Icons";
 
 function SignUp({ show }) {
   const [stepNumber, setStepNumber] = useState(1);
-  const [token, setToken] = useState("");
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    birth: "",
+    password: "",
+    rePassword: ""
+  });
   return (
     <div className="overlay-bg">
       <div className="form-popup" id="sign-up">
@@ -17,12 +22,12 @@ function SignUp({ show }) {
               <Icons iconName={"CLOSE"} />
             </div>
             <span>
-              Step {stepNumber} of 3
+              Step {stepNumber} of 2
             </span>
           </div>
-          {stepNumber === 1 && <StepOne stepNumber={stepNumber} setToken={setToken} setStepNumber={setStepNumber} />}
-          {stepNumber === 2 && <StepTwo setStepNumber={setStepNumber} />}
-          {stepNumber === 3 && <StepThree token={token} setStepNumber={setStepNumber} />}
+          {stepNumber === 1 &&
+            <StepOne stepNumber={stepNumber} user={user} setUser={setUser} setStepNumber={setStepNumber} />}
+          {stepNumber === 2 && <StepTwo user={user} setUser={setUser} />}
         </div>
       </div>
     </div>

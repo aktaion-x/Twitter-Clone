@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import BirthInputs from "../../../../components/BirthInputs/BirthInputs";
 import useAuthUser from "../../../../hooks/useAuthUser";
 
-function StepOne({ setStepNumber, setToken }) {
-  const { createUser, isPending, error } = useAuthUser();
+function StepOne({ setStepNumber, setToken, user, setUser }) {
+  const { checkEmail, isPending, error } = useAuthUser();
   const [disableSubmit, setDisableSubmit] = useState(true);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  // const [name, setName] = useState("");
+  // const [email, setEmail] = useState("");
   const [month, setMonth] = useState("");
   const [day, setDay] = useState("");
   const [year, setYear] = useState("");
@@ -15,21 +15,21 @@ function StepOne({ setStepNumber, setToken }) {
     e.preventDefault();
     if (setDisableSubmit) {
       const birth = new Date(Number(year), Number(month) - 1, Number(day));
-      const res = await createUser(email, name, birth);
+      const res = await checkEmail(user.email, user.name, birth);
       if (res.status === 200) {
+        setUser({ ...user, birth: birth.toDateString() });
         setStepNumber(2);
-        setToken(res.data.token);
       }
     }
   };
 
   useEffect(
     () => {
-      if (name && email && month && day && year) {
+      if (user.name && user.email && month && day && year) {
         setDisableSubmit(false);
       }
     },
-    [name, email, month, day, year]
+    [user.name, user.email, month, day, year]
   );
 
   return (
@@ -41,10 +41,16 @@ function StepOne({ setStepNumber, setToken }) {
             <div className="top">
               <span>Name</span>
               <span className="input-length">
-                {name.length}/50
+                {user.name.length}/50
               </span>
             </div>
-            <input type="text" value={name} onChange={e => setName(e.target.value)} required maxLength={50} />
+            <input
+              type="text"
+              value={user.name}
+              onChange={e => setUser({ ...user, name: e.target.value })}
+              required
+              maxLength={50}
+            />
           </label>
           <span>{`What's your name?`}</span>
         </div>
@@ -53,7 +59,12 @@ function StepOne({ setStepNumber, setToken }) {
             <div className="top">
               <span>Email</span>
             </div>
-            <input type="email" value={email} onChange={e => setEmail(e.target.value)} required />
+            <input
+              type="email"
+              value={user.email}
+              onChange={e => setUser({ ...user, email: e.target.value })}
+              required
+            />
           </label>
           <span className="error">
             {error}

@@ -1,43 +1,32 @@
 const User = require("../models/User");
-const { v4: uuidv4 } = require("uuid");
-const Redis = require("ioredis");
 const jwt = require("jsonwebtoken");
-const redis = new Redis();
 
-const userCreate = async (req, res) => {
-  const { email, name, birth } = req.body;
+const checkEmail = async (req, res) => {
+  const { email } = req.body;
   try {
-    // validate create User (email, birth)
-    await User.createUser(email, name, birth);
-    // Generate a unique key for this user's session
-    const sessionKey = uuidv4();
-    // Store the email, birth and name data in Redis
-    await redis.set(sessionKey, JSON.stringify({ email, name, birth }));
-    // Create a verification token with the session key and send it back to the client
-    const token = jwt.sign({ sessionKey }, process.env.SIGNUP_SECRET_KEY, {
-      expiresIn: "15m"
-    });
-    res.status(200).json({ token });
+    if (!email) {
+      return res.status(400).json({ message: "Email already exists" });
+    }
+    const isEmailExists = await User.findOne({ email });
+    if (isEmailExists) {
+      return res.status(400).json({ message: "Email already exists" });
+    } else {
+      console.log({ isEmailExists });
+      return res.status(200).json({ success: true });
+    }
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
 };
 const userSignup = async (req, res) => {
-  const { password, rePassword, token } = req.body;
-  if (!token) {
-    throw Error("Session is not valid");
-  }
-  const { sessionKey } = jwt.verify(token, process.env.SIGNUP_SECRET_KEY);
-  // Fetch data from Redis
-  const sessionData = await redis.get(sessionKey);
-  const { email, name, birth } = JSON.parse(sessionData);
+  const { email, name, birth, password, rePassword } = req.body;
   // signup User
+  console.log({ req: req.body });
   try {
     const user = await User.signupUser(email, name, birth, password, rePassword);
     const token = jwt.sign({ _id: user._id }, process.env.LOGIN_SECRET_KEY, {
       expiresIn: "3d"
     });
-    await redis.del(sessionKey);
     res.status(200).json({
       user: {
         ...user._doc,
@@ -45,7 +34,7 @@ const userSignup = async (req, res) => {
       }
     });
   } catch (error) {
-    res.status(400).error({ message: error.message });
+    res.status(400).json({ message: error.message });
   }
 };
 const userLogin = async (req, res) => {
@@ -83,6 +72,6 @@ const getUser = async (req, res) => {
   }
 };
 
-module.exports = { userCreate, userSignup, userLogin, getUser };
+module.exports = { checkEmail, userSignup, userLogin, getUser };
 
 // user image will work as an update
