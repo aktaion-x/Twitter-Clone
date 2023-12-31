@@ -26,7 +26,8 @@ function Post({ parentTweet, setRefresh }) {
 
   const handleCreate = async e => {
     e.preventDefault();
-    const res = await postTweet(text, parentTweet._id, media);
+    const parentId = parentTweet ? parentTweet._id : null;
+    const res = await postTweet(text, parentId, media);
     if (res.status === 200) {
       setRefresh([]);
       setText("");

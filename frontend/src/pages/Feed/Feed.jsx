@@ -50,7 +50,7 @@ function Feed() {
               </div>
             </nav>
           </div>
-          <CreatePost />
+          <CreatePost setRefresh={setRefresh} />
           <div className="tweets">
             {tweets.map(tweet => <Tweet key={tweet._id} tweet={tweet} setRefresh={setRefresh} />)}
           </div>
